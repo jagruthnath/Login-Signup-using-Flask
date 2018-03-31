@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<center>
+<div class="container">
+	<div class="col-md-6">
+		<h2>Login</h2>
+		{% if error_l %}<p class="error"><strong style="color:red">Error:</strong> {{ error_l }}{% endif %}
+		<form class="form-signin" action="{{ url_for('login') }}" method="post"><br>
+			<input type="text" name="email" class="form-control" required="" autofocus="" placeholder="Email"><br>
+			<input type="password" name="password" class="form-control" placeholder="Password"><br>
+			<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
+		</form>
+	</div>
+	<div class="col-md-6">
+		<h2>Sign Up</h2>
+		{% if error_s %}<p class="error"><strong style="color:red">Error:</strong> {{ error_s }}{% endif %}
+		<form class="form-signin" action="{{ url_for('login') }}" method="post"><br>
+			<input type="text" name="email" class="form-control" required="" autofocus="" placeholder="Email"><br>
+			<input type="password" name="password" class="form-control" placeholder="Password"><br>
+			<input type="password" name="cnf_password" class="form-control" required="" autofocus="" placeholder="Confirm Password"><br>
+			<input type="submit" value="Sign Up" class="btn btn-lg btn-primary btn-block"><br>	
+		</form>
+	</div>
+</div>
+</center>
+  {% endblock %}
